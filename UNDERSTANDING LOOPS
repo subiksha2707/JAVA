@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner io = new Scanner(System.in);
+        int n, x, y;
+        
+        System.out.print("Enter the number of Hai: ");
+        n = io.nextInt();
+        
+        System.out.print("Enter the number of rows: ");
+        x = io.nextInt();
+        
+        System.out.print("Enter the number of blocks: ");
+        y = io.nextInt();
+        
+        int totalCount = 0;  // Variable to keep track of the total number of "Hai"
+
+        for (int k = 0; k < y; k++) {
+            for (int j = 0; j < x; j++) {
+                for (int i = 0; i < n; i++) {
+                    System.out.print("Hai ");
+                    totalCount++;  // Increment the total count for each "Hai"
+                }
+                System.out.println();
+            }
+            // Print the total count of "Hai" after each block
+            System.out.println(totalCount);
+            System.out.println("-------------");
+        }
+        io.close();
+    }
+}

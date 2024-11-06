@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class CoPrime {
+
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    public static boolean isCoprimeTriplet(int a, int b, int c) {
+        
+        return gcd(a, b) == 1 && gcd(a, c) == 1 && gcd(b, c) == 1;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int b = scanner.nextInt();
+
+        System.out.print("Enter the third number: ");
+        int c = scanner.nextInt();
+
+        if (isCoprimeTriplet(a, b, c)) {
+            System.out.println("The numbers form a coprime triplet.");
+        } else {
+            System.out.println("The numbers do not form a coprime triplet.");
+        }
+
+        scanner.close();
+    }
+}

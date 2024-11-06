@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main {
-    public static int vichu(int[] a) {
+    public static int subi(int[] a) {
         int[] dp = new int[a.length];
         int maxi = 1;
 
@@ -23,6 +23,6 @@ public class Main {
 
     public static void main(String[] args) {
         int[] a = {10, 9, 2, 5, 3, 7, 101, 18};
-        System.out.println("The length is " + vichu(a));
+        System.out.println("The length is " + subi(a));
     }
 }

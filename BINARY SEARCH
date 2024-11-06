@@ -1,6 +1,6 @@
-import java.util.Scanner;
-class Main {
-  int binarySearch(int array[], int element, int low, int high) {
+import java.util.*;
+public class Main {
+  public int binarySearch(int array[], int element, int low, int high) {
     while (low <= high) {
       int mid = low + (high - low) / 2;
       if (array[mid] == element)

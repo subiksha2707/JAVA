@@ -1,0 +1,100 @@
+class LList 
+{
+    Node head;
+    
+    class Node
+    {
+        int data;
+        Node next;
+        
+        Node(int val)
+        {
+            data = val;
+            next = null;
+        }
+        
+    }
+    
+    public void insert(int val)
+    {
+        Node newnode = new Node(val);
+        
+        if(head == null)
+        {
+            head = newnode;
+        }
+        else
+        {
+            newnode.next = head;
+            head = newnode;
+        }
+    }
+    
+    public void display()
+    {
+        Node temp = head;
+        while(temp != null)
+        {
+            System.out.print(temp.data+"-->");
+            temp = temp.next;
+        }
+        
+        System.out.println("null");
+        
+    }
+    
+    public void insert_pos(int val,int pos)
+    {
+        if(pos == 0)
+        {
+            insert(val);
+        }
+        else
+        {
+            Node newnode = new Node(val);
+            Node temp = head;
+            for(int i = 1;i < pos;i++)
+            {
+                if(temp.next == null)
+                {
+                    System.out.println("Out of bound");
+                    return;
+                }
+                temp = temp.next;
+            }
+            
+            newnode.next = temp.next;
+            temp.next = newnode;
+        }
+    }
+    
+    public void delete(int pos)
+    {
+     Node temp = head;
+     for(int i = 1;i < pos;i++)
+     {
+         temp = temp.next;
+     }
+     
+     temp.next = temp.next.next;
+     
+    }
+}
+
+public class Main 
+{
+    public static void main(String[] args)
+    {
+        LList l = new LList();
+        
+        l.insert(100);
+        l.insert(200);
+        l.insert(300);
+        l.insert(400);
+        l.insert_pos(175,2);
+        l.display();
+        l.delete(1);
+        l.display();
+        
+    }
+}

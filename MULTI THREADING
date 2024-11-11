@@ -1,0 +1,33 @@
+public class Main extends Thread {
+   
+    public void run() {
+       
+        String[] arr1 = { "visu", "subi", "agal", "shiv", "deepi", "harini", "dhanu", "pooj" };
+        
+        for (String name : arr1) {
+            System.out.println(name);
+            try {
+                Thread.sleep(500); 
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted");
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        Main disThread = new Main();
+        disThread.start(); 
+        
+       
+        String[] arr2 = { "aathesh", "adhi", "ashwin", "balaaji", "deepak", "dharaneesh", "faaris", "venky" };
+        
+        for (String name : arr2) {
+            System.out.println(name);
+            try {
+                Thread.sleep(500); 
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted");
+            }
+        }
+    }
+}

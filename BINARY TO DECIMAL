@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter binary num: ");
+		String b = sc.nextLine();
+		int d=0;
+		int pow=0;
+		
+		for(int i = b.length()-1;i>=0;i--)
+		{
+		    char bit = b.charAt(i);
+		    if(bit=='1')
+		    {
+		        d += Math.pow(2,pow);
+		    }
+		    pow++;
+		}
+		System.out.println(d);
+	}
+}

@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the number of names:");
+        int n = sc.nextInt();
+        sc.nextLine();
+        
+        String[] names = new String[n];
+        
+        for (int i = 0; i < n; i++)
+        {
+            System.out.print("Enter name " + (i + 1) + ": ");
+            names[i] = sc.nextLine();
+        }
+        
+        for (int i = 0; i < n - 1; i++)
+        {
+            for (int j = i + 1; j < n; j++) 
+            {
+                if (names[i].compareTo(names[j]) > 0)
+                {
+                    String temp = names[i];
+                    names[i] = names[j];
+                    names[j] = temp;
+                }
+            }
+        }
+        
+        System.out.println("The sorted order of names are:");
+        for (int i = 0; i < n; i++) 
+        {
+            System.out.println(names[i]);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        String name = "pradeep";
+        String uniqueLetters = remove(name);
+        System.out.println(uniqueLetters);
+    }
+    public static String remove(String input) {
+        Set<Character> Chars = new LinkedHashSet<>(); 
+        for (char c : input.toCharArray()) {
+            Chars.add(c); 
+        }
+        StringBuilder result = new StringBuilder();
+        for (char c : Chars) {
+            result.append(c);
+        }
+        return result.toString();
+    }
+}

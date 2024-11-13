@@ -1,0 +1,17 @@
+command line argument
+
+
+public class Main {
+    public static void main(String[] args) {
+        if (args.length > 0) {
+            String name = args[0];
+            System.out.println("The name entered is: " + name);
+            System.out.println("The length of the name is: " + name.length());
+            for(int i = 0;i<name.length();i++){
+                System.out.println(name);
+            }
+        } else {
+            System.out.println("Please provide a name as a command-line argument.");
+        }
+    }
+}

@@ -1,0 +1,17 @@
+import java.util.*;
+
+ public class Main 
+{
+    public static void main(String[] args) 
+{
+        String input = "i love india";
+        String[] words = input.split(" ");
+        StringBuilder reversedSentence = new StringBuilder();
+
+        for (int i = words.length - 1; i >= 0; i--){
+            reversedSentence.append(words[i]).append(" ");
+        }
+
+        System.out.println(reversedSentence.toString().trim());
+    }
+}

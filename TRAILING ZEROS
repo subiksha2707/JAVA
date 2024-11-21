@@ -1,0 +1,19 @@
+public class Main {
+    
+    static int TrailingZeros(int n) {
+        if (n < 0) 
+            return -1;
+
+        int count = 0;
+
+        for (int i = 5; n / i >= 1; i *= 5)
+            count += n / i;
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        int n = 7;
+        System.out.println("Count is " +   TrailingZeros(n));
+    }
+}

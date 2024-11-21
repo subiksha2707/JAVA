@@ -1,0 +1,33 @@
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 11; i < 100; i++) {
+            if (isPrime(i) && startsWithOdd(i) && hasEvenDigitSum(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    public static boolean isPrime(int num) {
+        if (num < 2) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean startsWithOdd(int num) {
+        int firstDigit = Integer.parseInt(Integer.toString(num).substring(0, 1));
+        return firstDigit % 2 != 0;
+    }
+
+    public static boolean hasEvenDigitSum(int num) {
+        int sum = 0;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum % 2 == 0;
+    }
+}

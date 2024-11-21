@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Main
+{
+    
+	public static void main(String[] args) {
+	    
+	    Scanner sc = new Scanner(System.in);
+	    
+		System.out.println("Enter the height of the tower");
+		int h = sc.nextInt();
+		
+		System.out.println("Enter increasing height");
+		int i = sc.nextInt();
+		
+		System.out.println("Enter decreasing height");
+		int d = sc.nextInt();
+		
+		int count = 0;
+		int sum = 0;
+		
+		for(int j = 1;j <= h;j++)
+		{
+		    if(sum != h)
+		    {
+		    if(j % 2 != 0)
+		    {
+		        sum = sum + i;
+		        count++;
+		    }
+		    else
+		    {
+		        sum = sum - d;
+		        count++;
+		    }
+		    }
+		}
+		
+		System.out.println(count);
+		
+	}
+	
+}

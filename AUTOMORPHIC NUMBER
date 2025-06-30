@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = in.nextInt();
+        in.close();
+
+        int square = num * num;
+
+        int digits = String.valueOf(num).length();
+
+        int lastDigits = square % (int) Math.pow(10, digits);
+
+        if (lastDigits == num) {
+            System.out.println(num + " is an Automorphic number.");
+        } else {
+            System.out.println(num + " is not an Automorphic number.");
+        }
+    }
+}

@@ -1,0 +1,35 @@
+INPUT a2b5c6
+OUTPUT aabbbbbcccccc
+
+
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter the string:");
+        String input=in.nextLine();
+        
+        String output="";
+        char currentChar=0;
+        
+        for(int i=0;i<input.length();i++){
+            char ch=input.charAt(i);
+            
+            if(Character.isLetter(ch))
+            {
+                currentChar=ch;
+            }
+            else if(Character.isDigit(ch))
+            {
+                int count = Character.getNumericValue(ch);
+                
+                for(int j=0;j<count;j++){
+                   output += currentChar; 
+                }
+            
+            }
+        }
+        System.out.println("the output is:" + output);
+    }
+}

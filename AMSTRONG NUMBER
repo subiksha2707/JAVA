@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+       
+        Scanner in=new Scanner(System.in);
+        System.out.println("enter the number:");
+        int input=in.nextInt();
+        
+        int originalnumber,remainder,result=0;
+        originalnumber=input;
+        int digits = String.valueOf(input).length();
+        
+        while(originalnumber!=0){
+            remainder=originalnumber%10;
+            result += (int)Math.pow(remainder,digits);
+            originalnumber=originalnumber/10;
+        }
+        
+        if(input == result){
+            System.out.println("amstrong number");
+        }
+        else{
+            System.out.println("not amstrong number");
+        }
+    }
+}

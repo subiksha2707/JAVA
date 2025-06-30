@@ -1,0 +1,50 @@
+METHOD 1 : USING ARITHMETIC OPERATORS
+
+import java.util.Scanner;
+
+public class Method1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter first number (a): ");
+        int a = in.nextInt();
+        System.out.print("Enter second number (b): ");
+        int b = in.nextInt();
+        in.close();
+
+        System.out.println("Before swapping: a = " + a + ", b = " + b);
+
+        // Swap using + and -
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println("After swapping: a = " + a + ", b = " + b);
+    }
+}
+
+
+METHOD 2 : USING BITWISE XOR OPERATORS
+
+import java.util.Scanner;
+
+public class Method2 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter first number (a): ");
+        int a = in.nextInt();
+        System.out.print("Enter second number (b): ");
+        int b = in.nextInt();
+        in.close();
+
+        System.out.println("Before swapping: a = " + a + ", b = " + b);
+
+        // Swap using XOR
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+
+        System.out.println("After swapping: a = " + a + ", b = " + b);
+    }
+}

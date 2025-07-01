@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class AddWithoutPlus {
+    public static int add(int a, int b) {
+        while (b != 0) {
+            int carry = a & b;
+            a = a ^ b;
+            b = carry << 1;
+        }
+        return a;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);  
+
+        System.out.print("Enter first number: ");
+        int num1 = sc.nextInt();  
+
+        System.out.print("Enter second number: ");
+        int num2 = sc.nextInt();  
+
+        int result = add(num1, num2);  
+        System.out.println("Sum is: " + result); 
+
+        sc.close(); 
+    }
+}
+
+
+
+
+
+
+
+public class AddWithBuiltIn {
+    public static int add(int a, int b) {
+        while (b != 0) {
+            a = Math.incrementExact(a);
+            b = Math.decrementExact(b);
+        }
+        return a;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Sum is: " + add(7, 5));  // Output: 12
+    }
+}
